@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import IsEqual from 'react-fast-compare';
+import Hello from './Hello';
+import Wrapper from "./Wrapper";
+import Counter from "./Counter";
+import InputSample from "./InputSample";
+import UserList from "./UserList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Hello name={"이봉주"} color={"red"}/>
+      <Hello color={"blue"}/>
+      <Hello isSpecial={true}/>
+      <Counter />
+      <InputSample/>
+      <UserList/>
+    </Wrapper>
   );
 }
 
-export default App;
+export default React.memo(App,IsEqual);
